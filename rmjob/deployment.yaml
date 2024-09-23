@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rmjob-deployment
+  labels:
+    app: rmjob
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rmjob
+  template:
+    metadata:
+      labels:
+        app: rmjob
+    spec:
+      containers:
+      - name: rmjob
+        image: uniquebiwas/test_remotejob:latest
+        ports:
+        - containerPort: 8000
