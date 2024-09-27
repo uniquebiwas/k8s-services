@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: rmjob
-        image: uniquebiwas/test_remotejob:latest
+        image: uniquebiwas/test_remotejob:6.1
         ports:
         - containerPort: 8000
