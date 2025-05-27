@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sportsmitra-deployment
+  labels:
+    app: sportsmitra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sportsmitra
+  template:
+    metadata:
+      labels:
+        app: sportsmitra
+    spec:
+      containers:
+      - name: sportsmitra
+        image: skrgtm/test_sportsmitra:latest
+        ports:
+        - containerPort: 5000
