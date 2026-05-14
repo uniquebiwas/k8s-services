@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: rmjob-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
-    app: rmjob 
+    app: rmjob
   ports:
-    - port: 80
+    - protocol: TCP
+      port: 80
       targetPort: 8000
